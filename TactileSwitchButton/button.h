@@ -3,14 +3,15 @@
 *
 * Created: 23.12.2018 0:48:00
 * Author : Alexander Velilyaev
+* Contact: Alexandervelilyaev@gmail.com
+*
+* Library for comfortable work with tactile button switch 
 */
 
 #ifndef BUTTON_H_
 #define BUTTON_H_
-#define F_CPU 8000000UL
-#include <avr/io.h>
-#include <util/delay.h>
 
+//replace PORTB, DDRB, PINB if you are using a different port
 #define PORTx PORTB
 #define DDRx DDRB
 #define PINx PINB
@@ -24,6 +25,7 @@ typedef struct {
 
 Button CreateButton(uint8_t pin, void (*onBtnDown)() ,void (*onBtnUp)());
 
+//call this method in while(1) loop
 void Poll(Button* button);
 
 #endif /* BUTTON_H_ */

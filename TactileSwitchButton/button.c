@@ -1,11 +1,7 @@
-/*
-* TactileSwitchButton.c
-*
-* Created: 23.12.2018 0:48:00
-* Author : Alexander Velilyaev
-*/
-
 #include "button.h"
+#define F_CPU 8000000UL
+#include <avr/io.h>
+#include <util/delay.h>
 #define SET_BIT(DST, POS, VALUE) DST = (DST & ~(1 << POS)) | (VALUE << POS)
 #define GET_BIT(SRC, POS) (SRC & (1 << POS)) >> POS
 
@@ -28,7 +24,7 @@ Button CreateButton(uint8_t pin, void (*onBtnDown)() ,void (*onBtnUp)())
 
 void Poll(Button* button)
 {
-	_delay_ms(10);
+	_delay_ms(10);//debouncing
 	if (~(GET_BIT(PINx, (button->Pin))) && !button->IsClicked)
 	{
 		button->IsClicked = 1;
