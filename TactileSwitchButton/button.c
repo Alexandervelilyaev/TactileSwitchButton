@@ -1,7 +1,4 @@
 #include "button.h"
-#define F_CPU 8000000UL
-#include <avr/io.h>
-#include <util/delay.h>
 #define SET_BIT(DST, POS, VALUE) DST = (DST & ~(1 << POS)) | (VALUE << POS)
 #define GET_BIT(SRC, POS) (SRC & (1 << POS)) >> POS
 

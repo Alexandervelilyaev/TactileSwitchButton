@@ -16,6 +16,10 @@
 #define DDRx DDRB
 #define PINx PINB
 
+#define F_CPU 8000000UL
+#include <avr/io.h>
+#include <util/delay.h>
+
 typedef struct {
 	uint8_t IsClicked;//is clicked state
 	uint8_t Pin;//number of pin
