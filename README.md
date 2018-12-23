@@ -1,6 +1,10 @@
 # Simple AVR library for Tactile switch button
 ![banner](https://images-na.ssl-images-amazon.com/images/I/41rmOttqzlL._SX342_.jpg)
 
+### Circuit
+![Banner](https://github.com/Alexandervelilyaev/TactileSwitchButton/blob/master/circuit.png?raw=true)
+
+
 ## Methods:
 
 ```c 
