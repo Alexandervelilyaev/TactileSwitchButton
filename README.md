@@ -1,5 +1,19 @@
 # Simple AVR library for Tactile switch button
 ![banner](https://images-na.ssl-images-amazon.com/images/I/41rmOttqzlL._SX342_.jpg)
+
+## Methods:
+
+```c 
+Button CreateButton(uint8_t pin, void (*onBtnDown)() ,void (*onBtnUp)())
+``` 
+Create instance of Button. Pass as parameters pin number, pointer to onButtonDownEventHanlder and pointer to onButtonUpEventHanlder
+
+```c
+void Poll(Button* button)
+``` 
+Polling button's state. Call this method in while(1) loop.
+
+
 ## Example:
 
 ```c 
