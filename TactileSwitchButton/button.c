@@ -22,7 +22,7 @@ Button CreateButton(uint8_t pin, void (*onBtnDown)() ,void (*onBtnUp)())
 void Poll(Button* button)
 {
 	_delay_ms(10);//debouncing
-	if (~(GET_BIT(PINx, (button->Pin))) && !button->IsClicked)
+	if (!(GET_BIT(PINx, (button->Pin))) && !button->IsClicked)
 	{
 		button->IsClicked = 1;
 		button->OnButtonDown();
